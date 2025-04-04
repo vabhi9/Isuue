@@ -16,7 +16,7 @@ const productSchema = new Schema(
     productDescription: {
       type: String,
     },
-    Category:{
+    category:{
       type: String,
       required: true,
       enum : ["Electronics", "Diary", "Util" , "Cat-4"]
