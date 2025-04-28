@@ -3,7 +3,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { ApiError } from "../utils/ApiError.js";
 import { Product } from "../models/product.model.js";
 
-const registerProduct = asyncHandler(async (req, res) => {
+const registerProduct = asyncHandler(async (_, res) => {
   // Fetching product data directly from MongoDB
 
   let products = await Product.find(); // Fetch all products
@@ -26,7 +26,6 @@ const dynamicFilter = asyncHandler(async (req, res) => {
     console.log("Params are:", req.params);
 
     const { category } = req.params;
-    console.log(category);
 
     const products = await Product.find({ category }); // Dynamic filter
     console.log("Products Found:", products);

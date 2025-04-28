@@ -7,7 +7,7 @@ const productSchema = new Schema(
       required: true,
       unique: true,
       trim: true,
-      index: true,
+      // index: true,
     },
     price: {
       type: Number,
@@ -15,12 +15,17 @@ const productSchema = new Schema(
     },
     productDescription: {
       type: String,
+      required: true,
     },
-    category:{
+    category: {
       type: String,
       required: true,
-      enum : ["Electronics", "Diary", "Util" , "Cat-4"]
-    }
+      enum: ["Customized Hampers", "Electronics", "Diary", "Util", "Cat-4"],
+    },
+    CartItem: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
   }
   // {timestamps: true}
 );
